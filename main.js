@@ -5,7 +5,9 @@ const app = Vue.createApp({
   //   }
   // }
 
-    data() {
+  //MY SOLUTION
+
+   data() {
     return {
       product: {
         name: 'Socks',
@@ -13,5 +15,15 @@ const app = Vue.createApp({
       }
     }
   }
+
+  // ONLINE SOLUTION
+    // data() {
+    //     return {
+    //         product: 'Socks',
+    //         // Solution
+    //         description: 'A warm fuzzy pair of socks.'
+    //         // Solution
+    //     }
+    // }
 
 })
