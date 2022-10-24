@@ -23,13 +23,18 @@
             <p v-else>Out of Stock</p>
             <ul>
               <!-- loop below creates 3 li elements -->
-              <li v-for="detail in details">{{detail}}</li>
+              <li v-for="(detail, index) in details" :key="index">{{detail}}</li>
             </ul>
             <h4>Available Colors</h4>
             <div v-for="variant in variants" :key="variant.id">{{variant.color}}</div>
             <h4>Available Sizes</h4>
-            <div v-for="size in sizes" :key="size.id">{{size.size}}</div>
 
+            <!-- MY SOLUTION -->
+            <!-- <div v-for="size in sizes" :key="size.id">{{size.size}}</div> -->
+
+            <!-- L5 end solution, liked this better (was also used for an li inside ul similar to above) -->
+            <!-- NOTE: this solution uses the index for the key, which was not recommended when using React -->
+            <div v-for="(size, index) in sizes" :key="index">{{ size }}</div>
           </div>
         </div>
       </div>
