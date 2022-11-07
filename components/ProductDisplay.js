@@ -47,8 +47,8 @@ app.component('product-display', {
         </button>
         <button
           class="button"
-          :class="{ disabledButton: !incart }"
-          :disabled="!incart"
+          :class="{ disabledButton: !inCart }"
+          :disabled="!inCart"
           v-on:click="removeFromCart(); checkCartPresence()"
         >
           Remove
@@ -91,6 +91,9 @@ app.component('product-display', {
       },
       inStock() {
           return this.variants[this.selectedVariant].quantity
+      },
+      inCart() {
+          return this.incart;
       },
       shipping() {
         if (this.premium) {

@@ -10,12 +10,19 @@ const app = Vue.createApp({
         updateCart(id) {
             this.cart.push(id)
         },
-        removeCartItemById(id) {
-           removeIndex = this.cart.findIndex((cartItem) => cartItem.id === id)
-           this.cart.splice(removeIndex, 1)
+        removeById(id) {
+            const index = this.cart.indexOf(id)
+                if (index > -1) {
+                    this.cart.splice(index, 1)
+                }
         },
         itemPresentInCart(id) {
-            this.incart = !!this.cart.find(el => el.id === id)
+            const index = this.cart.indexOf(id)
+                if (index > -1) {
+                    this.incart = true;
+                }else{
+                    this.incart = false;
+                }
         }
     },
 })
