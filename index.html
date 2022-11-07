@@ -12,8 +12,15 @@
     <div id="app">
       <div class="nav-bar"></div>
 
-      <div class="cart">Cart({{ cart }})</div>
-      <product-display :premium="premium"></product-display>
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display
+        :premium="premium"
+        :incart="incart"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeCartItemById"
+        @check-cart-presence="itemPresentInCart"
+      >
+      </product-display>
     </div>
 
     <!-- Import App -->
